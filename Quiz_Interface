@@ -1,5 +1,7 @@
+//This is where ppl click buttons and it inputs stuff
 public class Quiz_Interface {
-    public static void main(String[]args){
-        System.out.println("This is where ppl click buttons and it inputs stuff");
-    }
+    What do you usually do when listening to music?
+    Chill/Vibe      Sleep       Cry/Be emo     Work/Study      Gameing/Daydream of yourself fighting an epic battle
+    
+    
 }
