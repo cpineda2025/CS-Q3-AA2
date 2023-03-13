@@ -1,0 +1,5 @@
+public class Quiz_Interface {
+    public static void main(String[]args){
+        System.out.println("This is where we calculate their scores in relation to their answers");
+    }
+}
