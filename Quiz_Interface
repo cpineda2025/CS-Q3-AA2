@@ -1,7 +1,14 @@
 //This is where ppl click buttons and it inputs stuff
 public class Quiz_Interface {
     What do you usually do when listening to music?
-    Chill/Vibe      Sleep       Cry/Be emo     Work/Study      Gameing/Daydream of yourself fighting an epic battle
+    Chill/Vibe      Sleep       Cry/Be emo     Work/Study      Gaming/Daydream of yourself fighting an epic battle
     
+    Are you familiar with any of these languages?
+    Korean      Japanese        Filipino        English
     
+    What's your age range?
+    1-7     8-12        12-20       21-59       60<
+    
+    Relationship status?
+    Single      Maidenless      Imaginary parter        Stop lying to yourself      Recently broke up
 }
