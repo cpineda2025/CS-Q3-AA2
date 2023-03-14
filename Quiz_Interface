@@ -10,5 +10,7 @@ public class Quiz_Interface {
     1-7     8-12        12-20       21-59       60<
     
     Relationship status?
-    Single      Maidenless      Imaginary parter        Stop lying to yourself      Recently broke up
+    Single       Taken      Recently broke up       Has a crush
+    
+    
 }
