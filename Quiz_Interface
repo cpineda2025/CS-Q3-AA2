@@ -1,16 +1,12 @@
 //This is where ppl click buttons and it inputs stuff
-public class Quiz_Interface {
-    What do you usually do when listening to music?
-    Chill/Vibe      Sleep       Cry/Be emo     Work/Study      Gaming/Daydream of yourself fighting an epic battle
+
+import java.awt*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Quiz_Interface extends JFrame implements Actionlistener{
     
-    Are you familiar with any of these languages?
-    Korean      Japanese        Filipino        English
-    
-    What's your age range?
-    1-7     8-12        12-20       21-59       60<
-    
-    Relationship status?
-    Single       Taken      Recently broke up       Has a crush
+    JPanel 
     
     
 }
