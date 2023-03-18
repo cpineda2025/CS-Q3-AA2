@@ -9,6 +9,15 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
     JPanel question__prompt = new JPanel();
     JTextField question = new JTextField("What is your name?");
     JPanel choices_promt = new JPanel();
+    JButton choice1 = new JButton();
+    JButton choice2 = new JButton();
+    JButton choice3 = new JButton();
+    JButton choice4 = new JButton();
+    JButton choice5 = new JButton();
+    
+    Quiz_Interface(){
     
     
+    
+    }
 }
