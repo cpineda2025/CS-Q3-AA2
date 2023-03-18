@@ -30,4 +30,19 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
     
     
     }
+
+    public static void main(String args[]){
+
+    Quiz_Interface frame = new Quiz_Interface();
+
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    frame.setSize(430,300);
+    frame.setLocation(300,300);
+    frame.setVisible(true);
+    frame.getContentPane().setBackground(Color.gray); 
+
+    frame.setResizable(false);
+
+    }
 }
