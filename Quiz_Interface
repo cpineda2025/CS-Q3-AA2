@@ -6,7 +6,9 @@ import java.awt.event.*;
 
 public class Quiz_Interface extends JFrame implements Actionlistener{
     
-    JPanel 
+    JPanel question__prompt = new JPanel();
+    JTextField question = new JTextField("What is your name?");
+    JPanel choices_promt = new JPanel();
     
     
 }
