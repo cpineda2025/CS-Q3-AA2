@@ -14,6 +14,14 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
     JButton choice3 = new JButton();
     JButton choice4 = new JButton();
     JButton choice5 = new JButton();
+    int questions = 1;
+    int music_genre1 = 0;
+    int music_genre2 = 0;
+    int music_genre3 = 0;
+    int music_genre4 = 0;
+    int music_genre5 = 0;
+    
+    
     
     Quiz_Interface(){
     
