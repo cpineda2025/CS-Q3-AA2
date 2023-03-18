@@ -7,25 +7,27 @@ import java.awt.event.*;
 public class Quiz_Interface extends JFrame implements Actionlistener{
     
     JPanel question__prompt = new JPanel();
-    JTextField question = new JTextField("What is your name?");
+    private JTextField quizid;
+    private JTextField question;
     JPanel choices_promt = new JPanel();
-    JButton choice1 = new JButton();
-    JButton choice2 = new JButton();
-    JButton choice3 = new JButton();
-    JButton choice4 = new JButton();
-    JButton choice5 = new JButton();
-    int questions = 1;
-    int music_genre1 = 0;
-    int music_genre2 = 0;
-    int music_genre3 = 0;
-    int music_genre4 = 0;
-    int music_genre5 = 0;
-    
+    private JButton choice1;
+    private JButton choice2;
+    private JButton choice3;
+    private JButton choice4;
+    private JButton choice5;
+    public int questionno;
+    public int maxquestionno;
+    private int questions = 1;
+    //These are the respective points for each music genre
+    private int musicgenre1;
+    private int musicgenre2;
+    private int musicgenre3:
     
     
     public Quiz_Interface(){
         super("Which music genre suits you quiz");
-        add(question);
+        JTextField quizid = new JTextField("What Music Genre Best Suits You?");
+        JTextField question = new JTextField("What is your name?");
         
     
     
