@@ -23,8 +23,10 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
     
     
     
-    Quiz_Interface(){
-    
+    public Quiz_Interface(){
+        super("Which music genre suits you quiz");
+        add(question);
+        
     
     
     }
