@@ -1,125 +1,1392 @@
-//This is where ppl click buttons and it inputs stuff
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Quiz_Interface extends JFrame implements Actionlistener{
+public class CompSciAA2 extends JFrame implements Actionlistener{
     
-    JPanel question_prompt = new JPanel();
-    private JTextField quizid;
-    private JTextField question;
-    JPanel choices_promt = new JPanel();
-    private JToggleButton choice1;
-    private JToggleButton choice2;
-    private JToggleButton choice3;
-    private JToggleButton choice4;
-    private JToggleButton choice5;
-    private JButton proceed;
-    public int questionno;
-    public int maxquestionno;
-    //choices per question
-    private int choices = 0;
-    //These are the respective points for each music genre
-    private int musicgenre1;
-    private int musicgenre2;
-    private int musicgenre3;
+    JPanel quiz_panel = new JPanel();
+    JLabel quiztitle = new JLabel("What Music Genre Best Suits You?");
+    JLabel quizdesc = new JLabel("What Music Genre Best Suits You? is a java-based application that prompts the user to input in responses to a set of questions that will determine their tastes in music. The questions asked will range from their age range to mood. After the answers have been submitted, the program will put out a music genre, artist/s and even some songs according to the inputted data.");
+
+    JPanel question1_panel = new JPanel();
+    JLabel q1 = new JLabel("What are you doing right now?");
+    JRadioButton q1c1 = new JRadioButton("Relaxing/Vibing");
+    JRadioButton q1c2 = new JRadioButton("Doing chores/homework");
+    JRadioButton q1c3 = new JRadioButton("Partying");
+    JRadioButton q1c4 = new JRadioButton("Daydreaming");
+    JRadioButton q1c5 = new JRadioButton("Gaming");
+    JRadioButton q1c6 = new JRadioButton("Other");
+
+    JPanel question2_panel = new JPanel();
+    JLabel q2 = new JLabel("What language do you prefer to listen to right now?");
+    JRadioButton q2c1 = new JRadioButton("English");
+    JRadioButton q2c2 = new JRadioButton("Japanese");
+    JRadioButton q2c3 = new JRadioButton("Korean");
+    JRadioButton q2c4 = new JRadioButton("Filipino");
+    JRadioButton q2c5 = new JRadioButton("No Language");
+
+    JPanel question3_panel = new JPanel();
+    JLabel q3 = new JLabel("Are you feeling particularly religious right now?");
+    JRadioButton q3c1 = new JRadioButton("Yes");
+    JRadioButton q3c2 = new JRadioButton("No");
+
+    JPanel question4_panel = new JPanel();
+    JLabel q4 = new JLabel("Do you consider yourself an old soul?");
+    JRadioButton q4c1 = new JRadioButton("Yes");
+    JRadioButton q4c2 = new JRadioButton("No");
+    JRadioButton q4c3 = new JRadioButton("Somewhere in between");
+
+    JPanel question5_panel = new JPanel();
+    JLabel q5 = new JLabel("What time of day is it right now?");
+    JRadioButton q5c1 = new JRadioButton("Morning");
+    JRadioButton q5c2 = new JRadioButton("Afternoon");
+    JRadioButton q5c3 = new JRadioButton("Late Afternoon");
+    JRadioButton q5c4 = new JRadioButton("NIght");
+
+    JPanel question6_panel = new JPanel();
+    JLabel q6 = new JLabel("Do you have the urge to set something on fire right now?");
+    JRadioButton q6c1 = new JRadioButton("Yes");
+    JRadioButton q6c2 = new JRadioButton("No");
+    JRadioButton q6c3 = new JRadioButton("Why would you ask that? (BOO!! You’re no fun)");
+    
+    JPanel question7_panel = new JPanel();
+    JLabel q7 = new JLabel("If you could go to any of these places right now, which one would you go to?");
+    JRadioButton q7c1 = new JRadioButton("Cafe");
+    JRadioButton q7c2 = new JRadioButton("Church");
+    JRadioButton q7c3 = new JRadioButton("Mall");
+    JRadioButton q7c4 = new JRadioButton("Theatre");
+    JRadioButton q7c5 = new JRadioButton("Library");
+    JRadioButton q7c6 = new JRadioButton("Nightclub");
+    JRadioButton q7c7 = new JRadioButton("School (Why?)");
+    JRadioButton q7c8 = new JRadioButton("A forest");
+    JRadioButton q7c9 = new JRadioButton("A random empty field");
+    JRadioButton q7c10 = new JRadioButton("Prison");
+    JRadioButton q7c11 = new JRadioButton("The beach");
+    JRadioButton q7c12 = new JRadioButton("Just stay at home");
+
+    JPanel question8_panel = new JPanel();
+    JLabel q8 = new JLabel("Do you feel like screaming right now?");
+    JRadioButton q8c1 = new JRadioButton("Yes");
+    JRadioButton q8c2 = new JRadioButton("No");
+
+    JPanel question9_panel = new JPanel();
+    JLabel q9 = new JLabel("If you could go to any of these places right now, which one would you go to?");
+    JRadioButton q9c1 = new JRadioButton("Shrek");
+    JRadioButton q9c2 = new JRadioButton("Isabella from Animal Crossing");
+    JRadioButton q9c3 = new JRadioButton("Sonic the Hedgehog");
+    JRadioButton q9c4 = new JRadioButton("Ronald Mcdonald");
+    JRadioButton q9c5 = new JRadioButton("Jollibee");
+    JRadioButton q9c6 = new JRadioButton("Grogu (Baby Yoda)");
+    JRadioButton q9c7 = new JRadioButton("Azula");
+    JRadioButton q9c8 = new JRadioButton("Sailor Moon");
+    JRadioButton q9c9 = new JRadioButton("Barry B. Benson (The Bee Movie Bee)");
+
+    JPanel question10_panel = new JPanel();
+    JLabel q10 = new JLabel("What stage of grief are you going through right now?");
+    JRadioButton q10c1 = new JRadioButton("Denial");
+    JRadioButton q10c2 = new JRadioButton("Anger");
+    JRadioButton q10c3 = new JRadioButton("Bargaining");
+    JRadioButton q10c4 = new JRadioButton("Depression");
+    JRadioButton q10c5 = new JRadioButton("Acceptance");
+    JRadioButton q10c6 = new JRadioButton("All 5");
+    JRadioButton q10c7 = new JRadioButton("None");
+
+    JPanel result = new JPanel();
+    JLabel mg_for_you = new JLabel("The music genre that best suits you is: ");
+    JLabel music_genre = new JLabel("*Your music genre appears here*");
+    JButton calcumulate = new JButton("Calcumulate");
+
+    int christian_music;
+    int classical_music;
+    int country;
+    int electronic_music;
+    int metal;
+    int rock;
+    int folk_music;
+    int hip_hop;
+    int jazz;
+    int jpop;
+    int kpop;
+    int lofi;
+    int opm;
+    int opera;
+    int rap;
+    int soul_music;
+    int soundtrack;
     
     
-    public Quiz_Interface(){
+    public CompSciAA2(){
         super("Which music genre suits you quiz");
+        quiz_panel.add(quiztitle);
+        quiz_panel.add(quizdesc);
 
-        JTextField quizid = new JTextField("What Music Genre Best Suits You?");
-        question_prompt.add(quizid);
-        JTextField question = new JTextField("What is your name?");
-        question_prompt.add(question);
+        question1_panel.add(q1);
+        ButtonGroup bg1 = new ButtonGroup();
+        bg1.add(q1c1);
+        bg1.add(q1c2);
+        bg1.add(q1c3);
+        bg1.add(q1c4);
+        bg1.add(q1c5);
+        bg1.add(q1c6);
+        question1_panel.add(q1c1);
+        question1_panel.add(q1c2);
+        question1_panel.add(q1c3);
+        question1_panel.add(q1c4);
+        question1_panel.add(q1c5);
+        question1_panel.add(q1c6);
+        add(question1_panel);
 
-        JToggleButton choice1  = new JToggleButton();
-        choice1.setSize(100, 100);
-        choice1.setVisible(false);
-        choices_promt.add(choice1);
-        JToggleButton choice2  = new JToggleButton();
-        choice2.setSize(100, 100);
-        choice2.setVisible(false);
-        choices_promt.add(choice2);
-        JToggleButton choice3  = new JToggleButton();
-        choice3.setSize(100, 100);
-        choice3.setVisible(false);
-        choices_promt.add(choice3);
-        JToggleButton choice4  = new JToggleButton();
-        choice4.setSize(100, 100);
-        choice4.setVisible(false);
-        choices_promt.add(choice4);
-        JToggleButton choice5  = new JToggleButton();
-        choice5.setSize(100, 100);
-        choice5.setVisible(false);
-        choices_promt.add(choice5);
+        question1_panel.add(q2);
+        ButtonGroup bg2 = new ButtonGroup();
+        bg2.add(q2c1);
+        bg2.add(q2c2);
+        bg2.add(q2c3);
+        bg2.add(q2c4);
+        bg2.add(q2c5);
+        question2_panel.add(q2c1);
+        question2_panel.add(q2c2);
+        question2_panel.add(q2c3);
+        question2_panel.add(q2c4);
+        question2_panel.add(q2c5);
+        add(question2_panel);
 
-        if(choices = 0){
-            choice1.setVisible(false);
-            choice2.setVisible(false);
-            choice3.setVisible(false);
-            choice4.setVisible(false);
-            choice5.setVisible(false);
-        }
-        else if(choices = 1){
-            choice1.setVisible(true);
-            choice2.setVisible(false);
-            choice3.setVisible(false);
-            choice4.setVisible(false);
-            choice5.setVisible(false);
-        }
-        else if(choices = 2){
-            choice1.setVisible(true);
-            choice2.setVisible(true);
-            choice3.setVisible(false);
-            choice4.setVisible(false);
-            choice5.setVisible(false);
-        }
-        else if(choices = 3){
-            choice1.setVisible(true);
-            choice2.setVisible(true);
-            choice3.setVisible(true);
-            choice4.setVisible(false);
-            choice5.setVisible(false);
-        }
-        else if(choices = 4){
-            choice1.setVisible(true);
-            choice2.setVisible(true);
-            choice3.setVisible(true);
-            choice4.setVisible(true);
-            choice5.setVisible(false);
-        }
-        else if(choices = 5){
-            choice1.setVisible(true);
-            choice2.setVisible(true);
-            choice3.setVisible(true);
-            choice4.setVisible(true);
-            choice5.setVisible(true);
-        }
+        question1_panel.add(q3);
+        ButtonGroup bg3 = new ButtonGroup();
+        bg3.add(q3c1);
+        bg3.add(q3c2);
+        question3_panel.add(q3c1);
+        question3_panel.add(q3c2);
+        add(question3_panel);
 
-        JButton proceed = new JButton("Start Quiz");
-        proceed.setSize(200, 100);
+        question1_panel.add(q4);
+        ButtonGroup bg4 = new ButtonGroup();
+        bg4.add(q4c1);
+        bg4.add(q4c2);
+        bg4.add(q4c3);
+        question4_panel.add(q4c1);
+        question4_panel.add(q4c2);
+        question4_panel.add(q4c3);
+        add(question4_panel);
 
+        question1_panel.add(q5);
+        ButtonGroup bg5 = new ButtonGroup();
+        bg5.add(q5c1);
+        bg5.add(q5c2);
+        bg5.add(q5c3);
+        bg5.add(q5c4);
+        question5_panel.add(q5c1);
+        question5_panel.add(q5c2);
+        question5_panel.add(q5c3);
+        question5_panel.add(q5c4);
+        add(question5_panel);
+
+        question1_panel.add(q6);
+        ButtonGroup bg6 = new ButtonGroup();
+        bg6.add(q6c1);
+        bg6.add(q6c2);
+        bg6.add(q6c3);
+        question6_panel.add(q6c1);
+        question6_panel.add(q6c2);
+        question6_panel.add(q6c3);
+        add(question6_panel);
+
+        question1_panel.add(q7);
+        ButtonGroup bg7 = new ButtonGroup();
+        bg7.add(q7c1);
+        bg7.add(q7c2);
+        bg7.add(q7c3);
+        bg7.add(q7c4);
+        bg7.add(q7c5);
+        bg7.add(q7c6);
+        bg7.add(q7c7);
+        bg7.add(q7c8);
+        bg7.add(q7c9);
+        bg7.add(q7c10);
+        bg7.add(q7c11);
+        bg7.add(q7c12);
+        question7_panel.add(q7c1);
+        question7_panel.add(q7c2);
+        question7_panel.add(q7c3);
+        question7_panel.add(q7c4);
+        question7_panel.add(q7c5);
+        question7_panel.add(q7c6);
+        question7_panel.add(q7c7);
+        question7_panel.add(q7c8);
+        question7_panel.add(q7c9);
+        question7_panel.add(q7c10);
+        question7_panel.add(q7c11);
+        question7_panel.add(q7c12);
+        add(question7_panel);
+
+        question1_panel.add(q8);
+        ButtonGroup bg8 = new ButtonGroup();
+        bg8.add(q8c1);
+        bg8.add(q8c2);
+        question8_panel.add(q8c1);
+        question8_panel.add(q8c2);
+        add(question8_panel);
+
+        question1_panel.add(q9);
+        ButtonGroup bg9 = new ButtonGroup();
+        bg9.add(q9c1);
+        bg9.add(q9c2);
+        bg9.add(q9c3);
+        bg9.add(q9c4);
+        bg9.add(q9c5);
+        bg9.add(q9c6);
+        bg9.add(q9c7);
+        bg9.add(q9c8);
+        bg9.add(q9c9);
+        question9_panel.add(q9c1);
+        question9_panel.add(q9c2);
+        question9_panel.add(q9c3);
+        question9_panel.add(q9c4);
+        question9_panel.add(q9c5);
+        question9_panel.add(q9c6);
+        question9_panel.add(q9c7);
+        question9_panel.add(q9c8);
+        question9_panel.add(q9c9);
+        add(question9_panel);
+
+        question1_panel.add(q10);
+        ButtonGroup bg10 = new ButtonGroup();
+        bg10.add(q10c1);
+        bg10.add(q10c2);
+        bg10.add(q10c3);
+        bg10.add(q10c4);
+        bg10.add(q10c5);
+        bg10.add(q10c6);
+        bg10.add(q10c7);
+        question10_panel.add(q10c1);
+        question10_panel.add(q10c2);
+        question10_panel.add(q10c3);
+        question10_panel.add(q10c4);
+        question10_panel.add(q10c5);
+        question10_panel.add(q10c6);
+        question10_panel.add(q10c7);
+        add(question10_panel);
+
+        result.add(mg_for_you);
+        result.add(music_genre);
+        add(result);
+        
+        calcumulate.addActionListener(this);
+        calcumulate.setSize(200, 100);
+        add(calcumulate);
     }
+
+
+
+
 
     public void actionPerformed(ActionEvent e){
 
+        if(q1c1.isSelected()){    
+             christian_music += 1;
+             classical_music += 1;
+                     country += 1;
+            electronic_music += 1;
+                       metal += 1;
+                        rock += 1;
+                  folk_music += 1;
+                     hip_hop += 1;
+                        jazz += 1;
+                        jpop += 1;
+                        kpop += 1;
+                        lofi += 1;
+                         opm += 1;
+                       opera += 1;
+                         rap += 1;
+                  soul_music += 1;
+                  soundtrack += 1;
+        }
+        else if(q1c2.isSelected()){    
+             christian_music -= 1;
+             classical_music += 1;
+                     country -= 1;
+            electronic_music += 1;
+                       metal += 1;
+                        rock += 1;
+                  folk_music -= 1;
+                     hip_hop -= 1;
+                        jazz -= 1;
+                        jpop -= 1;
+                        kpop -= 1;
+                        lofi += 1;
+                         opm -= 1;
+                       opera += 1;
+                         rap += 1;
+                  soul_music -= 1;
+                  soundtrack += 1;
+        }
+        else if(q1c3.isSelected()){    
+             christian_music -= 1;
+             classical_music -= 1;
+                     country -= 1;
+            electronic_music += 1;
+                       metal -= 1;
+                        rock -= 1;
+                  folk_music -= 1;
+                     hip_hop += 1;
+                        jazz += 1;
+                        jpop -= 1;
+                        kpop -= 1;
+                        lofi -= 1;
+                         opm -= 1;
+                       opera -= 1;
+                  soul_music -= 1;
+                  soundtrack -= 1;
+        }
+        else if(q1c4.isSelected()){    
+            christian_music -= 1;
+            classical_music += 1;
+                    country += 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz -= 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi -= 1;
+                        opm += 1;
+                      opera -= 1;
+                 soul_music -= 1;
+                 soundtrack += 1;
+        }
+        else if(q1c5.isSelected()){    
+            christian_music -= 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music += 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music -= 1;
+                    hip_hop += 1;
+                       jazz -= 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi -= 1;
+                        opm -= 1;
+                      opera -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+        }
+        else if(q1c6.isSelected()){    
+            christian_music += 1;
+            classical_music += 1;
+                    country += 1;
+           electronic_music += 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz += 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi += 1;
+                        opm += 1;
+                      opera += 1;
+                 soul_music += 1;
+                 soundtrack += 1;
+        }
 
+
+
+        if(q2c1.isSelected()){    
+            christian_music += 1;
+            classical_music -= 1;
+                    country += 1;
+           electronic_music -= 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz += 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi -= 1;
+                        opm -= 1;
+                      opera -= 1;
+                        rap += 1;
+                 soul_music += 1;
+                 soundtrack -= 1;
+        }    
+        else if(q2c2.isSelected()){    
+            christian_music += 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music -= 1;
+                    hip_hop -= 1;
+                       jazz -= 1;
+                       jpop += 1;
+                       kpop -= 1;
+                       lofi -= 1;
+                        opm -= 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+        }
+        else if(q2c3.isSelected()){    
+            christian_music -= 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music -= 1;
+                    hip_hop -= 1;
+                       jazz -= 1;
+                       jpop -= 1;
+                       kpop += 1;
+                       lofi -= 1;
+                        opm -= 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+        }
+        else if(q2c4.isSelected()){    
+            christian_music -= 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music -= 1;
+                    hip_hop -= 1;
+                       jazz -= 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi -= 1;
+                        opm += 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+        }
+        else if(q2c5.isSelected()){    
+            christian_music -= 1;
+            classical_music += 1;
+                    country -= 1;
+           electronic_music += 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music -= 1;
+                    hip_hop -= 1;
+                       jazz += 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi += 1;
+                        opm -= 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+        }
+
+
+
+        if(q3c1.isSelected()){    
+            christian_music += 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music -= 1;
+                    hip_hop -= 1;
+                       jazz -= 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi -= 1;
+                        opm -= 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+            boolean religious = true;
+        }
+        else if(q3c2.isSelected()){    
+            christian_music -= 1;
+            classical_music += 1;
+                    country += 1;
+           electronic_music += 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz += 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi += 1;
+                        opm += 1;
+                      opera += 1;
+                        rap += 1;
+                 soul_music += 1;
+                 soundtrack += 1;
+            boolean religious = false;
+        }
+
+
+
+        if(q4c1.isSelected()){    
+            christian_music -= 1;
+            classical_music += 1;
+                    country += 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music += 1;
+                    hip_hop -= 1;
+                       jazz += 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi -= 1;
+                        opm += 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music += 1;
+                 soundtrack -= 1;
+        }    
+        else if(q4c2.isSelected()){    
+            christian_music -= 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music += 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music -= 1;
+                    hip_hop += 1;
+                       jazz -= 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi -= 1;
+                        opm += 1;
+                      opera -= 1;
+                        rap += 1;
+                 soul_music += 1;
+                 soundtrack -= 1;
+        }
+        else if(q4c3.isSelected()){    
+            christian_music -= 1;
+            classical_music += 1;
+                    country += 1;
+           electronic_music += 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz += 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi += 1;
+                        opm += 1;
+                      opera += 1;
+                        rap += 1;
+                 soul_music += 1;
+                 soundtrack += 1;
+        }
+
+
+
+        if(q5c1.isSelected()){    
+            if(religious == true){
+                christian_music += 1;
+            }
+            else if(religious == false){
+                christian_music -= 1;
+            }
+            classical_music += 1;
+                    country += 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock -= 1;
+                 folk_music -= 1;
+                    hip_hop -= 1;
+                       jazz += 1;
+                       jpop -= 1;
+                       kpop -= 1;
+                       lofi += 1;
+                        opm += 1;
+                      opera -= 1;
+                        rap -= 1;
+                 soul_music -= 1;
+                 soundtrack -= 1;
+        }
+        else if(q5c2.isSelected()){    
+            christian_music -= 1;
+            classical_music -= 1;
+                    country += 1;
+           electronic_music -= 1;
+                      metal -= 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz -= 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi += 1;
+                        opm += 1;
+                      opera += 1;
+                        rap += 1;
+                 soul_music += 1;
+                 soundtrack -= 1;
+        }
+        else if(q5c3.isSelected()){    
+            christian_music -= 1;
+            classical_music -= 1;
+                    country -= 1;
+           electronic_music -= 1;
+                      metal += 1;
+                       rock += 1;
+                 folk_music += 1;
+                    hip_hop += 1;
+                       jazz += 1;
+                       jpop += 1;
+                       kpop += 1;
+                       lofi += 1;
+                        opm += 1;
+                      opera -= 1;
+                        rap += 1;
+                 soul_music += 1;
+                 soundtrack += 1;
+        }
+        else if(q5c4.isSelected()){    
+           christian_music -= 1;
+           classical_music += 1;
+                   country -= 1;
+          electronic_music += 1;
+                     metal -= 1;
+                      rock -= 1;
+                folk_music -= 1;
+                   hip_hop += 1;
+                      jazz += 1;
+                      jpop += 1;
+                      kpop += 1;
+                      lofi += 1;
+                       opm += 1;
+                     opera += 1;
+                       rap += 1;
+                soul_music += 1;
+                soundtrack += 1;
+        }
+
+
+
+        if(q6c1.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q6c2.isSelected()){
+        christian_music += 1;
+        classical_music += 1;
+                country += 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi += 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap -= 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+        else if(q6c3.isSelected()){
+        christian_music += 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+
+
+
+        if(q7c1.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music += 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q7c2.isSelected()){
+        christian_music += 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q7c3.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz -= 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+        else if(q7c4.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack += 1;
+        }
+        else if(q7c5.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music += 1;
+                hip_hop += 1;
+                   jazz -= 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music += 1;
+             soundtrack += 1;
+        }
+        else if(q7c6.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q7c7.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz -= 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q7c8.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music += 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+        else if(q7c9.isSelected()){
+        christian_music += 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music += 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music += 1;
+                hip_hop += 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q7c10.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+        else if(q7c11.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music += 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack += 1;
+        }
+        else if(q7c12.isSelected()){
+        christian_music += 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music += 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm += 1;
+                  opera += 1;
+                    rap += 1;
+             soul_music += 1;
+             soundtrack += 1;
+        }
+
+
+
+        if(q8c1.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q8c2.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country += 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm += 1;
+                  opera += 1;
+                    rap += 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+
+
+
+        if(q9c1.isSelected()){
+        christian_music += 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c2.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c3.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz -= 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c4.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music += 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop -= 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c5.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi -= 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c6.isSelected()){
+        christian_music += 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack += 1;
+        }
+        else if(q9c7.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c8.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q9c9.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi += 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+
+
+
+        if(q10c1.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi += 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap += 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+        else if(q10c2.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q10c3.isSelected()){
+        christian_music += 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music += 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack -= 1;
+        }
+        else if(q10c4.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop -= 1;
+                   jazz -= 1;
+                   jpop -= 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack += 1;
+        }
+        else if(q10c5.isSelected()){
+        christian_music -= 1;
+        classical_music += 1;
+                country -= 1;
+       electronic_music -= 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz -= 1;
+                   jpop += 1;
+                   kpop -= 1;
+                   lofi -= 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music -= 1;
+             soundtrack += 1;
+        }
+        else if(q10c6.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country -= 1;
+       electronic_music += 1;
+                  metal += 1;
+                   rock += 1;
+             folk_music += 1;
+                hip_hop -= 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm -= 1;
+                  opera += 1;
+                    rap += 1;
+             soul_music += 1;
+             soundtrack += 1;
+        }
+        else if(q10c7.isSelected()){
+        christian_music -= 1;
+        classical_music -= 1;
+                country += 1;
+       electronic_music += 1;
+                  metal -= 1;
+                   rock -= 1;
+             folk_music -= 1;
+                hip_hop += 1;
+                   jazz += 1;
+                   jpop += 1;
+                   kpop += 1;
+                   lofi += 1;
+                    opm += 1;
+                  opera -= 1;
+                    rap -= 1;
+             soul_music += 1;
+             soundtrack -= 1;
+        }
+
+
+
+        if(christian_music > classical_music && christian_music > country && christian_music > electronic_music && christian_music > metal && christian_music > rock && christian_music > folk_music && christian_music > hip_hop && christian_music > jazz && christian_music > jpop && christian_music > kpop && christian_music > lofi && christian_music > opm && christian_music > opera && christian_music > rap && christian_music > soul_music && christian_music > soundtrack){
+            music_genre.setText("Christian Music");
+        }
+        else if(classical_music > christian_music && classical_music > country && classical_music > electronic_music && classical_music > metal && classical_music > rock && classical_music > folk_music && classical_music > hip_hop && classical_music > jazz && classical_music > jpop && classical_music > kpop && classical_music > lofi && classical_music > opm && classical_music > opera && classical_music > rap && classical_music > soul_music && classical_music > soundtrack){
+            music_genre.setText("Classical Music");
+        }
+        else if(country > classical_music && country > christian_music && country > electronic_music && country > metal && country > rock && country > folk_music && country > hip_hop && country > jazz && country > jpop && country > kpop && country > lofi && country > opm && country > opera && country > rap && country > soul_music && country > soundtrack){
+            music_genre.setText("Country");
+        }
+        else if(electronic_music > classical_music && electronic_music > country && electronic_music > christian_music && electronic_music > metal && electronic_music > rock && electronic_music > folk_music && electronic_music > hip_hop && electronic_music > jazz && electronic_music > jpop && electronic_music > kpop && electronic_music > lofi && electronic_music > opm && electronic_music > opera && electronic_music > rap && electronic_music > soul_music && electronic_music > soundtrack){
+            music_genre.setText("Electronic Music");
+        }
+        else if(metal > classical_music && metal > country && metal > electronic_music && metal > christian_music && metal > rock && metal > folk_music && metal > hip_hop && metal > jazz && metal > jpop && metal > kpop && metal > lofi && metal > opm && metal > opera && metal > rap && metal > soul_music && metal > soundtrack){
+            music_genre.setText("Metal");
+        }
+        else if(rock > classical_music && rock > country && rock > electronic_music && rock > metal && rock > christian_music && rock > folk_music && rock > hip_hop && rock > jazz && rock > jpop && rock > kpop && rock > lofi && rock > opm && rock > opera && rock > rap && rock > soul_music && rock > soundtrack){
+            music_genre.setText("Rock");
+        }
+        else if(folk_music > classical_music && folk_music > country && folk_music > electronic_music && folk_music > metal && folk_music > rock && folk_music > christian_music && folk_music > hip_hop && folk_music > jazz && folk_music > jpop && folk_music > kpop && folk_music > lofi && folk_music > opm && folk_music > opera && folk_music > rap && folk_music > soul_music && folk_music > soundtrack){
+            music_genre.setText("Folk Music");
+        }
+        else if(hip_hop > classical_music && hip_hop > country && hip_hop > electronic_music && hip_hop > metal && hip_hop > rock && hip_hop > folk_music && hip_hop > christian_music && hip_hop > jazz && hip_hop > jpop && hip_hop > kpop && hip_hop > lofi && hip_hop > opm && hip_hop > opera && hip_hop > rap && hip_hop > soul_music && hip_hop > soundtrack){
+            music_genre.setText("Hip Hop");
+        }
+        else if(jazz > classical_music && jazz > country && jazz > electronic_music && jazz > metal && jazz > rock && jazz > folk_music && jazz > hip_hop && jazz > jazz && christian_music > jpop && jazz > kpop && jazz > lofi && jazz > opm && jazz > opera && jazz > rap && jazz > soul_music && jazz > soundtrack){
+            music_genre.setText("Jazz");
+        }
+        else if(jpop > classical_music && jpop > country && jpop > electronic_music && jpop > metal && jpop > rock && jpop > folk_music && jpop > hip_hop && jpop > jazz && jpop > christian_music && jpop > kpop && jpop > lofi && jpop > opm && jpop > opera && jpop > rap && jpop > soul_music && jpop > soundtrack){
+            music_genre.setText("Jpop");
+        }
+        else if(kpop > classical_music && kpop > country && kpop > electronic_music && kpop > metal && kpop > rock && kpop > folk_music && kpop > hip_hop && kpop > jazz && kpop > jpop && kpop > christian_music && kpop > lofi && kpop > opm && kpop > opera && kpop > rap && kpop > soul_music && kpop > soundtrack){
+            music_genre.setText("Kpop");
+        }
+        else if(lofi > classical_music && lofi > country && lofi > electronic_music && lofi > metal && lofi > rock && lofi > folk_music && lofi > hip_hop && lofi > jazz && lofi > jpop && lofi > kpop && lofi > christian_music && lofi > opm && lofi > opera && lofi > rap && lofi > soul_music && lofi > soundtrack){
+            music_genre.setText("Lofi");
+        }
+        else if(opm > classical_music  && opm > country && opm > electronic_music && opm > metal && opm > rock && opm > folk_music && opm > hip_hop && opm > jazz && opm > jpop && opm > kpop && opm > lofi && opm > christian_music && opm > opera && opm > rap && opm > soul_music && opm > soundtrack){
+            music_genre.setText("OPM");
+        }
+        else if(opera > classical_music  && opera > country && opera > electronic_music && opera > metal && opera > rock && opera > folk_music && opera > hip_hop && opera > jazz && opera > jpop && opera > kpop && opera > lofi && opera > opm && opera > christian_music && opera > rap && opera > soul_music && opera > soundtrack){
+            music_genre.setText("Opera");
+        }
+        else if(rap > classical_music && rap > country && rap > electronic_music && rap > metal && rap > rock && rap > folk_music && rap > hip_hop && rap > jazz && rap > jpop && rap > kpop && rap > lofi && rap > opm && rap > opera && rap > christian_music && rap > soul_music && rap > soundtrack){
+            music_genre.setText("Rap");
+        }
+        else if(soul_music > classical_music && soul_music > country && soul_music > electronic_music && soul_music > metal && soul_music > rock && soul_music > folk_music && soul_music > hip_hop && soul_music > jazz && soul_music > jpop && soul_music > kpop && soul_music > lofi && soul_music > opm && soul_music > opera && soul_music > rap && soul_music > christian_music && soul_music > soundtrack){
+            music_genre.setText("Soul Music");
+        }
+        else if(soundtrack > classical_music && soundtrack > country && soundtrack > electronic_music && soundtrack > metal && soundtrack > rock && soundtrack > folk_music && soundtrack > hip_hop && soundtrack > jazz && soundtrack > jpop && soundtrack > kpop && soundtrack > lofi && soundtrack > opm && soundtrack > opera && soundtrack > rap && soundtrack > soul_music && soundtrack > soundtrack){
+            music_genre.setText("Soundtrack");
+        }
         
-
     }
+
+
 
     public static void main(String args[]){
 
-        Quiz_Interface frame = new Quiz_Interface();
-        frame.setLayout(new GridLayout(1, 2));
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(430,300);
-        frame.setLocation(300,300);
-        frame.setVisible(true);
-        frame.getContentPane().setBackground(Color.gray); 
-        frame.setResizable(false);
+        CompSciAA2 compsciaa2 = new CompSciAA2();
+        compsciaa2.setLayout(new GridLayout(13, 1));
+        compsciaa2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        compsciaa2.setSize(1000,600);
+        compsciaa2.setLocation(300,300);
+        compsciaa2.setVisible(true);
+        compsciaa2.getContentPane().setBackground(Color.gray);
+        compsciaa2.setResizable(false);
 
     }
 }
