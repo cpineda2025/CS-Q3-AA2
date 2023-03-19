@@ -35,20 +35,67 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
 
         JToggleButton choice1  = new JToggleButton();
         choice1.setSize(100, 100);
+        choice1.setVisible(false);
         choices_promt.add(choice1);
         JToggleButton choice2  = new JToggleButton();
         choice2.setSize(100, 100);
+        choice2.setVisible(false);
+        choices_promt.add(choice2);
         JToggleButton choice3  = new JToggleButton();
         choice3.setSize(100, 100);
+        choice3.setVisible(false);
+        choices_promt.add(choice3);
         JToggleButton choice4  = new JToggleButton();
         choice4.setSize(100, 100);
+        choice4.setVisible(false);
+        choices_promt.add(choice4);
         JToggleButton choice5  = new JToggleButton();
         choice5.setSize(100, 100);
+        choice5.setVisible(false);
+        choices_promt.add(choice5);
 
         if(choices = 0){
             choice1.setVisible(false);
+            choice2.setVisible(false);
+            choice3.setVisible(false);
+            choice4.setVisible(false);
+            choice5.setVisible(false);
         }
-        
+        else if(choices = 1){
+            choice1.setVisible(true);
+            choice2.setVisible(false);
+            choice3.setVisible(false);
+            choice4.setVisible(false);
+            choice5.setVisible(false);
+        }
+        else if(choices = 2){
+            choice1.setVisible(true);
+            choice2.setVisible(true);
+            choice3.setVisible(false);
+            choice4.setVisible(false);
+            choice5.setVisible(false);
+        }
+        else if(choices = 3){
+            choice1.setVisible(true);
+            choice2.setVisible(true);
+            choice3.setVisible(true);
+            choice4.setVisible(false);
+            choice5.setVisible(false);
+        }
+        else if(choices = 4){
+            choice1.setVisible(true);
+            choice2.setVisible(true);
+            choice3.setVisible(true);
+            choice4.setVisible(true);
+            choice5.setVisible(false);
+        }
+        else if(choices = 5){
+            choice1.setVisible(true);
+            choice2.setVisible(true);
+            choice3.setVisible(true);
+            choice4.setVisible(true);
+            choice5.setVisible(true);
+        }
 
         JButton proceed = new JButton("Start Quiz");
         proceed.setSize(200, 100);
