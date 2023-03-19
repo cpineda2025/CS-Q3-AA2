@@ -28,6 +28,7 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
     
     public Quiz_Interface(){
         super("Which music genre suits you quiz");
+
         JTextField quizid = new JTextField("What Music Genre Best Suits You?");
         question_prompt.add(quizid);
         JTextField question = new JTextField("What is your name?");
@@ -100,22 +101,25 @@ public class Quiz_Interface extends JFrame implements Actionlistener{
         JButton proceed = new JButton("Start Quiz");
         proceed.setSize(200, 100);
 
-    
-    
+    }
+
+    public void actionPerformed(ActionEvent e){
+
+
+        
+
     }
 
     public static void main(String args[]){
 
-    Quiz_Interface frame = new Quiz_Interface();
-
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-    frame.setSize(430,300);
-    frame.setLocation(300,300);
-    frame.setVisible(true);
-    frame.getContentPane().setBackground(Color.gray); 
-
-    frame.setResizable(false);
+        Quiz_Interface frame = new Quiz_Interface();
+        frame.setLayout(new GridLayout(1, 2));
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(430,300);
+        frame.setLocation(300,300);
+        frame.setVisible(true);
+        frame.getContentPane().setBackground(Color.gray); 
+        frame.setResizable(false);
 
     }
 }
