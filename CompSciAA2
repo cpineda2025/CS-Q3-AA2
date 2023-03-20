@@ -136,7 +136,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question1_panel.add(q1c6);
         add(question1_panel);
 
-        question1_panel.add(q2);
+        question2_panel.add(q2);
         ButtonGroup bg2 = new ButtonGroup();
         bg2.add(q2c1);
         bg2.add(q2c2);
@@ -150,7 +150,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question2_panel.add(q2c5);
         add(question2_panel);
 
-        question1_panel.add(q3);
+        question3_panel.add(q3);
         ButtonGroup bg3 = new ButtonGroup();
         bg3.add(q3c1);
         bg3.add(q3c2);
@@ -158,7 +158,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question3_panel.add(q3c2);
         add(question3_panel);
 
-        question1_panel.add(q4);
+        question4_panel.add(q4);
         ButtonGroup bg4 = new ButtonGroup();
         bg4.add(q4c1);
         bg4.add(q4c2);
@@ -168,7 +168,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question4_panel.add(q4c3);
         add(question4_panel);
 
-        question1_panel.add(q5);
+        question5_panel.add(q5);
         ButtonGroup bg5 = new ButtonGroup();
         bg5.add(q5c1);
         bg5.add(q5c2);
@@ -180,7 +180,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question5_panel.add(q5c4);
         add(question5_panel);
 
-        question1_panel.add(q6);
+        question6_panel.add(q6);
         ButtonGroup bg6 = new ButtonGroup();
         bg6.add(q6c1);
         bg6.add(q6c2);
@@ -190,7 +190,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question6_panel.add(q6c3);
         add(question6_panel);
 
-        question1_panel.add(q7);
+        question7_panel.add(q7);
         ButtonGroup bg7 = new ButtonGroup();
         bg7.add(q7c1);
         bg7.add(q7c2);
@@ -218,7 +218,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question7_panel.add(q7c12);
         add(question7_panel);
 
-        question1_panel.add(q8);
+        question8_panel.add(q8);
         ButtonGroup bg8 = new ButtonGroup();
         bg8.add(q8c1);
         bg8.add(q8c2);
@@ -226,7 +226,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question8_panel.add(q8c2);
         add(question8_panel);
 
-        question1_panel.add(q9);
+        question9_panel.add(q9);
         ButtonGroup bg9 = new ButtonGroup();
         bg9.add(q9c1);
         bg9.add(q9c2);
@@ -248,7 +248,7 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         question9_panel.add(q9c9);
         add(question9_panel);
 
-        question1_panel.add(q10);
+        question10_panel.add(q10);
         ButtonGroup bg10 = new ButtonGroup();
         bg10.add(q10c1);
         bg10.add(q10c2);
