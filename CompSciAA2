@@ -117,8 +117,10 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
     
     public CompSciAA2(){
         super("Which music genre suits you quiz");
+
         quiz_panel.add(quiztitle);
         quiz_panel.add(quizdesc);
+        add(quiz_panel);
 
         question1_panel.add(q1);
         ButtonGroup bg1 = new ButtonGroup();
@@ -1387,6 +1389,5 @@ public class CompSciAA2 extends JFrame implements Actionlistener{
         compsciaa2.setVisible(true);
         compsciaa2.getContentPane().setBackground(Color.gray);
         compsciaa2.setResizable(false);
-
     }
 }
